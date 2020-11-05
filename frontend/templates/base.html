@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Raleway:wght@600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="static/css/normalize.css">
+    <link rel="stylesheet" href="static/css/fonts.css">
+    <link rel="stylesheet" href="static/css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="static/css/slick.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <api href-paginate="{{api_url}}"></api>
+    
+    <title>Movies</title>
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__content">
+            <div class="container">
+                <div class="header__content-inner">
+                    <div class="header__logo">
+                        <a href="#">
+                            <img src="img/logo.png" alt="">
+                        </a>
+                    </div>
+                    <nav class="header-menu">
+                        <ul>
+                            <li>
+                                <form method="GET"> 
+                                    <input type="text" name="q" placeholder="Search here..." class="search" value = "{{ request.args.get('q', '') }}">
+                                    <input type="image" src="img/search.png" alt="ОК" class="btn">
+                                </form>
+                            </li>
+                            <li><a href = "#" id = "movies">Premieres</a></li>
+                            <li><a href='/indx'> Movies </a></li>
+                            <li><a href="#"> Categories </a>
+                                <ul>
+                                    <li><a href="#">Drama</a></li>
+                                    <li><a href="#">Historical</a></li>
+                                    <li><a href="#">Fantasy</a></li>
+                                    <li><a href="#">Horror</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#" id = "pag"> Genres </a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class = "movies">
+
+    </div>
+    <ul class = "pagesWrapper">
+    
+    </ul>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='base.js') }}"></script>
+    <script src="static/base.js"></script>
+
+
+    
+</body>
+
+</html>

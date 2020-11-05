@@ -1,0 +1,10 @@
+from movies.blueprint import *
+movies.add_url_rule('/create', view_func=create, methods=['GET', 'POST'])
+movies.add_url_rule('/create_movie', view_func=create_movie, methods = ['POST'])
+movies.add_url_rule('/<slug>/edit', view_func=edit, methods=['GET', 'POST'])
+movies.add_url_rule('/<slug>/edit_movie', view_func=edit_movie, methods=['GET', 'POST'])
+movies.add_url_rule('/', view_func=index, methods=['GET'])
+movies.add_url_rule('/<slug>', view_func=movie_detail)
+movies.add_url_rule('/genre/<slug>', view_func=genre_detail)
+movies.add_url_rule('/<slug>/upload', view_func=upload, methods=['GET', 'POST'])
+movies.add_url_rule('/<slug>/delete/', view_func=delete_movie, methods=['GET', 'POST'])
